@@ -23,7 +23,7 @@ class QRCode extends \booosta\base\Module
     if(is_object($this->topobj) && is_a($this->topobj, "\\booosta\\webapp\\Webapp")):
       $this->topobj->moduleinfo['qrcode'] = true;
       if($this->topobj->moduleinfo['jquery']['use'] == '') $this->topobj->moduleinfo['jquery']['use'] = true;
-      $this->topobj->add_includes("<script src='{$this->topobj->base_dir}vendor/booosta/qrcode/jquery-qrcode-0.14.0.min.js'></script>");
+      $this->topobj->add_includes("<script src='{$this->topobj->base_dir}vendor/booosta/qrcode/src/jquery-qrcode-0.14.0.min.js'></script>");
     endif;
   }
 
@@ -31,7 +31,7 @@ class QRCode extends \booosta\base\Module
 
   public function save_file($filename)
   {
-    return \QRcode::png($this->data, $filename);
+    return \PHPQRcode\QRcode::png($this->data, $filename);
   }
 
   public function show_js($divtag)
