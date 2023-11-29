@@ -19,6 +19,8 @@ Booosta is installed, you can install this module with
 composer require booosta/qrcode
 ```
 
+## Usage
+
 In your scripts you use the module:
 
 ```
